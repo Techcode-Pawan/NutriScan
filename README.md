@@ -38,7 +38,7 @@ ETL: etl/fetch_off.py → services/api/src/scripts/etl.ts → import.ts      ML:
 | `ml/` | dataset building, training, evaluation, SHAP inference service, tests |
 | `etl/` | Open Food Facts snapshot fetch and ingredient enrichment (rate-limited, offline) |
 | `data/` | `raw/` sources, `processed/` cleaned output and quality report, `import/` category mapping and sample dataset |
-| `docs/` | audit, API, scoring, dataset, database, ML, OCR, testing, final report |
+| `docs/` | audit, API, scoring, dataset, database, ML, OCR, testing, final report; `docs/thesis/` holds the thesis PDF and the presentation |
 | `legacy/prototype/` | the original single-page prototype, kept for reference (not used by the app) |
 
 ## Features
