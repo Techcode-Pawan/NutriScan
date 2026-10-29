@@ -1,0 +1,15 @@
+{
+  "source": "Open Food Facts search API",
+  "endpoint": "https://search.openfoodfacts.org/search",
+  "country": "india",
+  "filters": {
+    "states_tags": "en:nutrition-facts-completed"
+  },
+  "downloaded_at": "2026-10-28T18:41:55.101824+00:00",
+  "pages": 45,
+  "page_size": 100,
+  "records": 4067,
+  "count_reported_by_api": 4067,
+  "license": "ODbL 1.0 (database), DbCL 1.0 (contents), CC BY-SA (images)",
+  "attribution": "Data from Open Food Facts contributors - https://world.openfoodfacts.org"
+}

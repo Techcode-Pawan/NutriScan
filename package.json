@@ -1,0 +1,22 @@
+{
+  "name": "nutriscan",
+  "private": true,
+  "description": "NutriScan: database-driven food nutrition analysis with FSSAI-draft INR scoring, healthier alternatives and an experimental ML estimate",
+  "scripts": {
+    "setup": "npm --prefix services/api install && npm --prefix apps/mobile install",
+    "db:start": "bash scripts/dev-db.sh",
+    "db:migrate": "npm --prefix services/api run db:migrate && npm --prefix services/api exec prisma generate",
+    "db:migrate:test": "npm --prefix services/api run db:migrate:test",
+    "data:fetch-off": "python etl/fetch_off.py --pages 45",
+    "data:enrich-off": "python etl/enrich_off_ingredients.py",
+    "data:etl": "npm --prefix services/api run etl",
+    "data:import": "npm --prefix services/api run data:import",
+    "data:sample": "npm --prefix services/api run data:sample",
+    "api": "npm --prefix services/api run dev",
+    "mobile": "npm --prefix apps/mobile run start",
+    "mobile:web": "npm --prefix apps/mobile run web",
+    "test:api": "npm --prefix services/api test",
+    "test:mobile": "npm --prefix apps/mobile test",
+    "typecheck": "npm --prefix services/api run typecheck && npm --prefix apps/mobile run typecheck"
+  }
+}

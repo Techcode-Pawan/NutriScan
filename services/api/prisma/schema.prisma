@@ -1,0 +1,340 @@
+// NutriScan database schema - adapted from thesis Appendix A (see docs/DATABASE.md for the
+// mapping and the reasons for each deviation).
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pg_trgm]
+}
+
+enum InrClass {
+  SOLID
+  LIQUID
+  EXEMPT
+}
+
+enum NutritionBasis {
+  PER_100G
+  PER_100ML
+  UNKNOWN
+}
+
+enum DataSource {
+  OPEN_FOOD_FACTS
+  LEGACY_CSV
+  USER_SUBMISSION
+}
+
+enum InrStatus {
+  RATED
+  PARTIAL
+  INSUFFICIENT_DATA
+  EXEMPT
+  NOT_ELIGIBLE
+  BASIS_UNKNOWN
+}
+
+enum ScanMethod {
+  CAMERA
+  MANUAL
+  IMAGE
+  SEARCH
+}
+
+enum SubmissionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum SubmissionSource {
+  MANUAL
+  OCR
+}
+
+enum AgeGroup {
+  CHILD
+  TEEN
+  ADULT
+  SENIOR
+}
+
+model Category {
+  id              Int        @id @default(autoincrement())
+  slug            String     @unique
+  name            String     @unique
+  /// null = category not covered by the INR draft as sold (not rated)
+  inrClass        InrClass?  @map("inr_class")
+  /// true when the category is a drink (beverage proviso applies)
+  isBeverage      Boolean    @default(false) @map("is_beverage")
+  description     String?
+  parentId        Int?       @map("parent_id")
+  parent          Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children        Category[] @relation("CategoryTree")
+  products        Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id               String          @id @default(cuid())
+  /// GS1-validated GTIN (EAN-8 / EAN-13; UPC-A stored as 13 digits). Null for legacy CSV rows.
+  barcode          String?         @unique @db.VarChar(14)
+  name             String
+  brand            String?
+  categoryId       Int?            @map("category_id")
+  category         Category?       @relation(fields: [categoryId], references: [id])
+  subcategory      String?
+  ingredientsText  String?         @map("ingredients_text")
+  imageUrl         String?         @map("image_url")
+  quantity         String?
+  /// true / false when known from source data or ingredients; null when unknown
+  isVegetarian     Boolean?        @map("is_vegetarian")
+  dataSource       DataSource      @map("data_source")
+  /// Stable source identifier, e.g. "off:8901719134845" or "legacy-csv:12"
+  sourceRef        String          @unique @map("source_ref")
+  sourceModifiedAt DateTime?       @map("source_modified_at")
+  qualityFlags     String[]        @default([]) @map("quality_flags")
+  /// Reference labels carried from the source (e.g. OFF Nutri-Score grade) for ML evaluation
+  referenceLabels  Json?           @map("reference_labels")
+  importBatchId    Int?            @map("import_batch_id")
+  importBatch      ImportBatch?    @relation(fields: [importBatchId], references: [id])
+  createdAt        DateTime        @default(now()) @map("created_at")
+  updatedAt        DateTime        @updatedAt @map("updated_at")
+
+  nutrition        NutritionFacts?
+  healthScore      HealthScore?
+  mlPredictions    MlPrediction[]
+  scans            ScanHistory[]
+  favorites        Favorite[]
+
+  @@index([categoryId])
+  @@index([brand])
+  @@index([dataSource])
+  @@map("products")
+}
+
+model NutritionFacts {
+  productId             String         @id @map("product_id")
+  product               Product        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  basis                 NutritionBasis
+  /// How the basis was established (declared by source / assumed / inferred)
+  basisNote             String?        @map("basis_note")
+  energyKcal            Decimal?       @map("energy_kcal") @db.Decimal(7, 2)
+  fatG                  Decimal?       @map("fat_g") @db.Decimal(6, 2)
+  saturatedFatG         Decimal?       @map("saturated_fat_g") @db.Decimal(6, 2)
+  transFatG             Decimal?       @map("trans_fat_g") @db.Decimal(6, 2)
+  carbohydratesG        Decimal?       @map("carbohydrates_g") @db.Decimal(6, 2)
+  sugarsG               Decimal?       @map("sugars_g") @db.Decimal(6, 2)
+  fiberG                Decimal?       @map("fiber_g") @db.Decimal(6, 2)
+  proteinG              Decimal?       @map("protein_g") @db.Decimal(6, 2)
+  sodiumMg              Decimal?       @map("sodium_mg") @db.Decimal(9, 2)
+  /// Declared fruit & vegetable percentage parsed from the ingredient list
+  fruitVegPct           Decimal?       @map("fruit_veg_pct") @db.Decimal(5, 2)
+  /// Declared nuts, legumes & millets percentage parsed from the ingredient list
+  nutsLegumesMilletsPct Decimal?       @map("nuts_legumes_millets_pct") @db.Decimal(5, 2)
+  /// Share (0-1) of the six display nutrients that are present
+  completeness          Float
+  /// Optional additional nutrients (cholesterol, calcium, iron, ...)
+  extra                 Json?
+
+  @@index([sugarsG])
+  @@index([sodiumMg])
+  @@map("nutrition_facts")
+}
+
+/// Thesis-aligned INR star rating. ML estimates live in ml_predictions and are never stored here.
+model HealthScore {
+  id               Int       @id @default(autoincrement())
+  productId        String    @unique @map("product_id")
+  product          Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  method           String    @default("INR")
+  algorithmVersion String    @map("algorithm_version")
+  status           InrStatus
+  inrClass         InrClass? @map("inr_class")
+  starRating       Decimal?  @map("star_rating") @db.Decimal(2, 1)
+  finalScore       Int?      @map("final_score")
+  baselinePoints   Int?      @map("baseline_points")
+  positivePoints   Int?      @map("positive_points")
+  /// Full factor-by-factor breakdown (InrResult)
+  breakdown        Json
+  /// Template-generated explanation (InrExplanation)
+  explanation      Json
+  dataCompleteness Float     @map("data_completeness")
+  isHfss           Boolean?  @map("is_hfss")
+  computedAt       DateTime  @default(now()) @map("computed_at")
+
+  @@index([starRating(sort: Desc)])
+  @@index([status])
+  @@map("health_scores")
+}
+
+/// INR threshold rows (Schedule-III Tables 2 and 3) stored as versioned data.
+model CategoryThreshold {
+  id               Int      @id @default(autoincrement())
+  algorithmVersion String   @map("algorithm_version")
+  inrClass         InrClass @map("inr_class")
+  /// energyKcal | saturatedFatG | sugarsG | sodiumMg | fruitVegPct | nutsLegumesMilletsPct | fiberG | proteinG
+  parameter        String
+  /// "baseline" or "positive"
+  kind             String
+  points           Int
+  /// Strict lower bound: a value > this earns `points`
+  greaterThan      Decimal  @map("greater_than") @db.Decimal(9, 2)
+
+  @@unique([algorithmVersion, inrClass, parameter, points])
+  @@map("category_thresholds")
+}
+
+model ScoringAlgorithm {
+  version     String   @id
+  name        String
+  source      String
+  config      Json
+  assumptions Json
+  isActive    Boolean  @default(false) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("scoring_algorithms")
+}
+
+model User {
+  id           String           @id @default(uuid()) @db.Uuid
+  email        String           @unique
+  passwordHash String           @map("password_hash")
+  displayName  String?          @map("display_name")
+  /// Incremented to invalidate all issued tokens ("log out everywhere", password change)
+  tokenVersion Int              @default(0) @map("token_version")
+  createdAt    DateTime         @default(now()) @map("created_at")
+  updatedAt    DateTime         @updatedAt @map("updated_at")
+
+  preferences  UserPreference?
+  scans        ScanHistory[]
+  favorites    Favorite[]
+  submissions  ProductSubmission[]
+  queries      AssistantQuery[]
+
+  @@map("users")
+}
+
+model UserPreference {
+  userId              String    @id @map("user_id") @db.Uuid
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lowSugar            Boolean   @default(false) @map("low_sugar")
+  lowSodium           Boolean   @default(false) @map("low_sodium")
+  lowSaturatedFat     Boolean   @default(false) @map("low_saturated_fat")
+  highFiber           Boolean   @default(false) @map("high_fiber")
+  highProtein         Boolean   @default(false) @map("high_protein")
+  vegetarian          Boolean   @default(false)
+  excludedIngredients String[]  @default([]) @map("excluded_ingredients")
+  ageGroup            AgeGroup? @map("age_group")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+
+  @@map("user_preferences")
+}
+
+model ScanHistory {
+  id        BigInt     @id @default(autoincrement())
+  userId    String     @map("user_id") @db.Uuid
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String     @map("product_id")
+  product   Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+  method    ScanMethod @default(MANUAL)
+  scannedAt DateTime   @default(now()) @map("scanned_at")
+
+  @@index([userId, scannedAt(sort: Desc)])
+  @@map("scan_history")
+}
+
+model Favorite {
+  userId    String   @map("user_id") @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String   @map("product_id")
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  addedAt   DateTime @default(now()) @map("added_at")
+
+  @@id([userId, productId])
+  @@map("favorites")
+}
+
+model ProductSubmission {
+  id           Int              @id @default(autoincrement())
+  userId       String?          @map("user_id") @db.Uuid
+  user         User?            @relation(fields: [userId], references: [id], onDelete: SetNull)
+  barcode      String?          @db.VarChar(14)
+  name         String
+  brand        String?
+  source       SubmissionSource @default(MANUAL)
+  /// Category slug, ingredients and per-100 nutrition as entered/reviewed by the user
+  payload      Json
+  imagePath    String?          @map("image_path")
+  status       SubmissionStatus @default(PENDING)
+  reviewerNote String?          @map("reviewer_note")
+  submittedAt  DateTime         @default(now()) @map("submitted_at")
+  reviewedAt   DateTime?        @map("reviewed_at")
+
+  @@index([status])
+  @@index([barcode])
+  @@map("product_submissions")
+}
+
+model ImportBatch {
+  id         Int       @id @default(autoincrement())
+  source     String
+  fileName   String    @map("file_name")
+  startedAt  DateTime  @default(now()) @map("started_at")
+  finishedAt DateTime? @map("finished_at")
+  stats      Json?
+  products   Product[]
+
+  @@map("import_batches")
+}
+
+model MlModelVersion {
+  version      String         @id
+  target       String
+  algorithm    String
+  metrics      Json
+  config       Json
+  trainedAt    DateTime       @map("trained_at")
+  registeredAt DateTime       @default(now()) @map("registered_at")
+  predictions  MlPrediction[]
+
+  @@map("ml_model_versions")
+}
+
+/// Experimental ML output; kept separate from the INR rating.
+model MlPrediction {
+  id             Int            @id @default(autoincrement())
+  productId      String         @map("product_id")
+  product        Product        @relation(fields: [productId], references: [id], onDelete: Cascade)
+  modelVersion   String         @map("model_version")
+  model          MlModelVersion @relation(fields: [modelVersion], references: [version], onDelete: Cascade)
+  predictedGrade String         @map("predicted_grade")
+  /// 0-100 index derived from class probabilities (see docs/ML.md)
+  mlIndex        Float          @map("ml_index")
+  probabilities  Json
+  explanation    Json
+  createdAt      DateTime       @default(now()) @map("created_at")
+
+  @@unique([productId, modelVersion])
+  @@map("ml_predictions")
+}
+
+/// Assistant usage metadata only (no message text is stored).
+model AssistantQuery {
+  id        Int      @id @default(autoincrement())
+  userId    String?  @map("user_id") @db.Uuid
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  productId String?  @map("product_id")
+  intent    String
+  provider  String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("assistant_queries")
+}

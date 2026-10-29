@@ -1,0 +1,759 @@
+{
+  "$comment": "Maps source categories to NutriScan primary categories and their INR class (FSSAI draft 2022: SOLID = Category-I, LIQUID = Category-II, EXEMPT = Category-III / Schedule-IV, null = not covered as sold). Rules are evaluated in order; the first match wins. Maintained as data so that categories can be refined without code changes (thesis section 3.5). minPlausibleEnergyKcal: below this energy per 100 g the values are almost certainly per serving or as prepared, so the basis is treated as unknown (no rating) - a data-quality guard, not a nutrition threshold.",
+  "version": "2026-10-29",
+  "categories": [
+    {
+      "slug": "biscuits-cookies",
+      "name": "Biscuits & Cookies",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 250
+    },
+    {
+      "slug": "snacks-namkeen",
+      "name": "Snacks, Chips & Namkeen",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 200
+    },
+    {
+      "slug": "chocolates-confectionery",
+      "name": "Chocolates & Confectionery",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 200
+    },
+    {
+      "slug": "breakfast-cereals",
+      "name": "Breakfast Cereals & Muesli",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 200
+    },
+    {
+      "slug": "noodles-pasta",
+      "name": "Instant Noodles & Pasta",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 200
+    },
+    {
+      "slug": "ready-to-eat",
+      "name": "Ready-to-eat & Instant Foods",
+      "inrClass": "SOLID",
+      "isBeverage": false
+    },
+    {
+      "slug": "beverages",
+      "name": "Beverages (non-dairy)",
+      "inrClass": "LIQUID",
+      "isBeverage": true,
+      "description": "FSS category 14.0 drinks, scored with the Category-II liquid tables per 100 ml"
+    },
+    {
+      "slug": "dairy-beverages",
+      "name": "Dairy Beverages",
+      "inrClass": "SOLID",
+      "isBeverage": true,
+      "description": "Milkshakes, flavoured milk, cold coffee, lassi; Category-I per draft Table 2 heading"
+    },
+    {
+      "slug": "health-drink-powders",
+      "name": "Health Drink Powders",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "description": "Malt/cocoa drink mixes scored per 100 g as sold (assumption, see docs/SCORING.md)",
+      "minPlausibleEnergyKcal": 200
+    },
+    {
+      "slug": "dairy-products",
+      "name": "Dairy Products",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "description": "Flavoured yogurt, cheese, paneer, butter and other non-plain dairy"
+    },
+    {
+      "slug": "ice-cream-desserts",
+      "name": "Ice Cream & Frozen Desserts",
+      "inrClass": "SOLID",
+      "isBeverage": false
+    },
+    {
+      "slug": "indian-sweets",
+      "name": "Indian Sweets",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 150
+    },
+    {
+      "slug": "cakes-bakery",
+      "name": "Cakes, Breads & Bakery",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 150
+    },
+    {
+      "slug": "spreads",
+      "name": "Spreads, Jams & Nut Butters",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 150
+    },
+    {
+      "slug": "sauces-pickles",
+      "name": "Sauces, Dips & Pickles",
+      "inrClass": "SOLID",
+      "isBeverage": false
+    },
+    {
+      "slug": "bars-nutrition",
+      "name": "Protein & Cereal Bars",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 200
+    },
+    {
+      "slug": "dried-fruits",
+      "name": "Dried Fruits & Dates",
+      "inrClass": "SOLID",
+      "isBeverage": false,
+      "minPlausibleEnergyKcal": 150
+    },
+    {
+      "slug": "tea-coffee",
+      "name": "Tea & Coffee (dry)",
+      "inrClass": null,
+      "isBeverage": false,
+      "description": "Dry tea/coffee as sold is not clearly covered by the draft tables; not rated"
+    },
+    {
+      "slug": "plain-dairy",
+      "name": "Plain Milk, Curd & Cream",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 1.1-1.5"
+    },
+    {
+      "slug": "grains-flours",
+      "name": "Grains, Flours & Plain Oats",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 6.1, 6.2"
+    },
+    {
+      "slug": "spices-seasonings",
+      "name": "Spices, Masalas & Salt",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 12.1, 12.2"
+    },
+    {
+      "slug": "sugar-honey",
+      "name": "Sugar, Honey & Sweeteners",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 11"
+    },
+    {
+      "slug": "oils-ghee",
+      "name": "Oils & Ghee",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 2.1"
+    },
+    {
+      "slug": "plain-produce",
+      "name": "Plain Nuts, Seeds, Pulses & Fruit",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 4.1.1, 4.2.1"
+    },
+    {
+      "slug": "waters",
+      "name": "Waters",
+      "inrClass": "EXEMPT",
+      "isBeverage": true,
+      "description": "Schedule-IV 14.1.1"
+    },
+    {
+      "slug": "supplements-infant",
+      "name": "Supplements & Infant Foods",
+      "inrClass": "EXEMPT",
+      "isBeverage": false,
+      "description": "Schedule-IV 13"
+    },
+    {
+      "slug": "alcoholic-beverages",
+      "name": "Alcoholic Beverages",
+      "inrClass": "EXEMPT",
+      "isBeverage": true,
+      "description": "Schedule-IV 14.2"
+    }
+  ],
+  "offTagRules": [
+    {
+      "category": "alcoholic-beverages",
+      "tags": [
+        "en:alcoholic-beverages",
+        "en:beers",
+        "en:wines"
+      ]
+    },
+    {
+      "category": "waters",
+      "tags": [
+        "en:waters",
+        "en:spring-waters",
+        "en:mineral-waters",
+        "en:carbonated-waters"
+      ]
+    },
+    {
+      "category": "supplements-infant",
+      "tags": [
+        "en:baby-foods",
+        "en:infant-formulas",
+        "en:dietary-supplements",
+        "en:bodybuilding-supplements",
+        "en:protein-powders"
+      ]
+    },
+    {
+      "category": "dairy-beverages",
+      "tags": [
+        "en:dairy-drinks",
+        "en:flavoured-milks",
+        "en:milkshakes",
+        "en:lassi",
+        "en:buttermilks",
+        "en:fermented-milk-drinks"
+      ]
+    },
+    {
+      "category": "ice-cream-desserts",
+      "tags": [
+        "en:ice-creams",
+        "en:ice-creams-and-sorbets",
+        "en:frozen-desserts"
+      ]
+    },
+    {
+      "category": "oils-ghee",
+      "tags": [
+        "en:ghee",
+        "en:clarified-butters",
+        "en:butter-fat",
+        "en:milkfat"
+      ]
+    },
+    {
+      "category": "plain-dairy",
+      "tags": [
+        "en:plain-yogurts",
+        "en:curd",
+        "en:milks",
+        "en:pasteurised-milks",
+        "en:milk-powders",
+        "en:creams",
+        "en:milks-liquid-and-powder"
+      ]
+    },
+    {
+      "category": "dairy-products",
+      "tags": [
+        "en:yogurts",
+        "en:cheeses",
+        "en:paneer",
+        "en:butters",
+        "en:dairy-desserts",
+        "en:dairy-spreads"
+      ]
+    },
+    {
+      "category": "tea-coffee",
+      "tags": [
+        "en:teas",
+        "en:coffees",
+        "en:instant-coffees",
+        "en:ground-coffees",
+        "en:green-teas"
+      ]
+    },
+    {
+      "category": "health-drink-powders",
+      "tags": [
+        "en:instant-beverages",
+        "en:beverage-preparations",
+        "en:malted-drinks",
+        "en:cocoa-powders"
+      ]
+    },
+    {
+      "category": "beverages",
+      "tags": [
+        "en:plant-based-milk-alternatives",
+        "en:milk-substitutes",
+        "en:beverages",
+        "en:juices-and-nectars",
+        "en:fruit-juices",
+        "en:sodas",
+        "en:energy-drinks",
+        "en:fruit-based-beverages",
+        "en:carbonated-drinks",
+        "en:sweetened-beverages",
+        "en:plant-based-beverages"
+      ]
+    },
+    {
+      "category": "noodles-pasta",
+      "tags": [
+        "en:instant-noodles",
+        "en:noodles",
+        "en:pastas"
+      ]
+    },
+    {
+      "category": "grains-flours",
+      "tags": [
+        "en:rolled-oats",
+        "en:oat-flakes"
+      ]
+    },
+    {
+      "category": "breakfast-cereals",
+      "tags": [
+        "en:breakfast-cereals",
+        "en:mueslis",
+        "en:cereal-flakes",
+        "en:extruded-cereals",
+        "en:granolas"
+      ]
+    },
+    {
+      "category": "bars-nutrition",
+      "tags": [
+        "en:protein-bars",
+        "en:cereal-bars",
+        "en:bars"
+      ]
+    },
+    {
+      "category": "biscuits-cookies",
+      "tags": [
+        "en:biscuits",
+        "en:cookies",
+        "en:crackers",
+        "en:biscuits-and-crackers",
+        "en:wafers",
+        "en:rusks",
+        "en:chocolate-biscuits"
+      ]
+    },
+    {
+      "category": "cakes-bakery",
+      "tags": [
+        "en:cakes",
+        "en:breads",
+        "en:pastries",
+        "en:viennoiseries",
+        "en:muffins"
+      ]
+    },
+    {
+      "category": "chocolates-confectionery",
+      "tags": [
+        "en:chocolates",
+        "en:confectioneries",
+        "en:candies",
+        "en:chocolate-candies",
+        "en:chewing-gum",
+        "en:milk-chocolates",
+        "en:dark-chocolates"
+      ]
+    },
+    {
+      "category": "indian-sweets",
+      "tags": [
+        "en:indian-sweets"
+      ]
+    },
+    {
+      "category": "sugar-honey",
+      "tags": [
+        "en:honeys",
+        "en:sugars",
+        "en:sweeteners",
+        "en:jaggery"
+      ]
+    },
+    {
+      "category": "spreads",
+      "tags": [
+        "en:sweet-spreads",
+        "en:jams",
+        "en:peanut-butters",
+        "en:nut-butters",
+        "en:legume-butters",
+        "en:chocolate-spreads",
+        "en:oilseed-purees"
+      ]
+    },
+    {
+      "category": "sauces-pickles",
+      "tags": [
+        "en:sauces",
+        "en:ketchup",
+        "en:tomato-ketchup",
+        "en:mayonnaises",
+        "en:pickles",
+        "en:chutneys",
+        "en:dips"
+      ]
+    },
+    {
+      "category": "spices-seasonings",
+      "tags": [
+        "en:spices",
+        "en:condiments",
+        "en:seasonings",
+        "en:salts",
+        "en:herbs"
+      ]
+    },
+    {
+      "category": "oils-ghee",
+      "tags": [
+        "en:vegetable-oils",
+        "en:animal-fats",
+        "en:olive-oils",
+        "en:vegetable-fats",
+        "en:fats"
+      ]
+    },
+    {
+      "category": "grains-flours",
+      "tags": [
+        "en:flours",
+        "en:rices",
+        "en:cereal-grains",
+        "en:cereal-flours",
+        "en:semolinas",
+        "en:wheat-flours"
+      ]
+    },
+    {
+      "category": "snacks-namkeen",
+      "tags": [
+        "en:chips-and-fries",
+        "en:crisps",
+        "en:salty-snacks",
+        "en:appetizers",
+        "en:popcorn",
+        "en:potato-crisps",
+        "en:salted-nuts"
+      ]
+    },
+    {
+      "category": "ready-to-eat",
+      "tags": [
+        "en:meals",
+        "en:ready-meals",
+        "en:soups"
+      ]
+    },
+    {
+      "category": "dried-fruits",
+      "tags": [
+        "en:dried-fruits",
+        "en:dates"
+      ]
+    },
+    {
+      "category": "plain-produce",
+      "tags": [
+        "en:nuts",
+        "en:seeds",
+        "en:legumes",
+        "en:pulses",
+        "en:fruits",
+        "en:vegetables",
+        "en:legume-seeds"
+      ]
+    },
+    {
+      "category": "snacks-namkeen",
+      "tags": [
+        "en:snacks"
+      ]
+    }
+  ],
+  "nameRules": [
+    {
+      "category": "dairy-beverages",
+      "pattern": "\\bmilk ?shake|\\blassi\\b|flavou?red milk|cold coffee|iced coffee|iced latte|\\bchaas\\b|buttermilk|badam milk|\\bfrappe\\b"
+    },
+    {
+      "category": "waters",
+      "pattern": "\\b(mineral|packaged drinking|spring) water\\b"
+    },
+    {
+      "category": "beverages",
+      "pattern": "coconut water|juice|nectar|\\bsoda\\b|\\bcola\\b|soft drink|energy drink|\\bdrink\\b|beverage|lemonade|\\bsharbat\\b|iced tea"
+    },
+    {
+      "category": "ice-cream-desserts",
+      "pattern": "ice ?cream|\\bkulfi\\b|frozen dessert|\\bcassata\\b|\\bsorbet\\b|choco ?bar\\b"
+    },
+    {
+      "category": "biscuits-cookies",
+      "pattern": "biscuit|cookie|cracker|\\brusk\\b|\\bwafers?\\b|\\bbourbon\\b|\\bmarie\\b|parle[- ]?g\\b|hide ?& ?seek|good ?day|\\bmonaco\\b|krack ?jack|\\boreo\\b"
+    },
+    {
+      "category": "chocolates-confectionery",
+      "pattern": "chocolate|\\bchoco\\b|\\bcandy\\b|\\btoffee\\b|\\beclairs?\\b|lollipop|chewing gum|\\bgum\\b|\\bjelly\\b|gummies|dairy milk|\\bkitkat\\b|\\bmunch\\b|\\bperk\\b|5 ?star"
+    },
+    {
+      "category": "noodles-pasta",
+      "pattern": "noodle|\\bmaggi\\b|\\bpasta\\b|macaroni|spaghetti|vermicelli|\\bramen\\b"
+    },
+    {
+      "category": "breakfast-cereals",
+      "pattern": "corn ?flakes|muesli|granola|\\bcereal\\b|\\bchocos\\b"
+    },
+    {
+      "category": "bars-nutrition",
+      "pattern": "protein bar|energy bar|granola bar|cereal bar"
+    },
+    {
+      "category": "indian-sweets",
+      "pattern": "laddu|ladoo|barfi|burfi|peda|halwa|soan ?papdi|rasgulla|gulab jamun|mithai|katli|mysore pak|chikki|rasmalai|petha"
+    },
+    {
+      "category": "snacks-namkeen",
+      "pattern": "\\bchips\\b|\\bcrisps\\b|namkeen|bhujia|\\bmixture\\b|\\bpuffs?\\b|kurkure|nachos|makhana|chakli|murukku|\\bsev\\b|popcorn|khakhra|papad|mathri|\\bpeanuts?\\b|\\blays?\\b|\\bbingo\\b"
+    },
+    {
+      "category": "cakes-bakery",
+      "pattern": "\\bcake|brownie|muffin|croissant|\\bbread\\b|\\bbun\\b|\\bpav\\b|donut|swiss roll"
+    },
+    {
+      "category": "spreads",
+      "pattern": "\\bjam\\b|peanut butter|nut butter|\\bspread\\b"
+    },
+    {
+      "category": "sauces-pickles",
+      "pattern": "ketchup|sauce|mayonnaise|\\bmayo\\b|pickle|achar|chutney|\\bdip\\b"
+    },
+    {
+      "category": "tea-coffee",
+      "pattern": "\\btea\\b|coffee|chai"
+    },
+    {
+      "category": "health-drink-powders",
+      "pattern": "bournvita|horlicks|boost|complan|malt drink|health drink"
+    },
+    {
+      "category": "sugar-honey",
+      "pattern": "\\bhoney\\b|\\bsugar\\b|jaggery|\\bgur\\b"
+    },
+    {
+      "category": "oils-ghee",
+      "pattern": "\\bghee\\b|\\boil\\b"
+    },
+    {
+      "category": "spices-seasonings",
+      "pattern": "masala|spice|haldi|turmeric|mirch|chilli powder|garam|\\bsalt\\b|seasoning"
+    },
+    {
+      "category": "grains-flours",
+      "pattern": "\\batta\\b|flour|besan|\\brice\\b|\\bsuji\\b|\\brava\\b|\\bpoha\\b|dalia|rolled oats|\\boats\\b"
+    },
+    {
+      "category": "dairy-products",
+      "pattern": "cheese|paneer|butter|yogh?urt"
+    },
+    {
+      "category": "plain-dairy",
+      "pattern": "\\bcurd\\b|\\bdahi\\b|\\bmilk\\b|\\bcream\\b"
+    },
+    {
+      "category": "plain-produce",
+      "pattern": "almonds?|cashews?|walnuts?|pistachios?|\\bdal\\b|lentils?|chana|rajma|\\bseeds\\b"
+    }
+  ],
+  "legacyRules": [
+    {
+      "category": "dairy-beverages",
+      "legacyCategory": "JUICE",
+      "subcategories": [
+        "MILKSHAKE",
+        "COFFEE",
+        "BUBBLE TEA"
+      ]
+    },
+    {
+      "category": "beverages",
+      "legacyCategory": "JUICE"
+    },
+    {
+      "category": "biscuits-cookies",
+      "legacyCategory": "BISCUIT"
+    },
+    {
+      "category": "snacks-namkeen",
+      "legacyCategory": "SNACKS"
+    },
+    {
+      "category": "chocolates-confectionery",
+      "legacyCategory": "CHOCOLATE"
+    },
+    {
+      "category": "ice-cream-desserts",
+      "legacyCategory": "ICEREAMES"
+    },
+    {
+      "category": "indian-sweets",
+      "legacyCategory": "SWEETS"
+    },
+    {
+      "category": "cakes-bakery",
+      "legacyCategory": "CAKE"
+    },
+    {
+      "category": "cakes-bakery",
+      "legacyCategory": "WAFFLE"
+    },
+    {
+      "category": "biscuits-cookies",
+      "legacyCategory": "WAFER"
+    },
+    {
+      "category": "sugar-honey",
+      "legacyCategory": "SPREAD",
+      "subcategories": [
+        "HONEY"
+      ]
+    },
+    {
+      "category": "sauces-pickles",
+      "legacyCategory": "SPREAD",
+      "subcategories": [
+        "BASIL PISTO  DIP",
+        "CHEESE DIP",
+        "MAYO AND KETCHUP",
+        "SIRRACHA DIP",
+        "TAMARIND DIP",
+        "SANDWICH SPREAD"
+      ]
+    },
+    {
+      "category": "spreads",
+      "legacyCategory": "SPREAD"
+    },
+    {
+      "category": "sauces-pickles",
+      "legacyCategory": "SAUCE"
+    },
+    {
+      "category": "plain-dairy",
+      "legacyCategory": "DAIRY",
+      "subcategories": [
+        "CURD",
+        "CREAM"
+      ]
+    },
+    {
+      "category": "dairy-products",
+      "legacyCategory": "DAIRY"
+    },
+    {
+      "category": "noodles-pasta",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "NOODLES",
+        "PASTA",
+        "VERMICELLI"
+      ]
+    },
+    {
+      "category": "breakfast-cereals",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "CEREAL",
+        "MUSLI",
+        "CHOCO CHIP"
+      ]
+    },
+    {
+      "category": "health-drink-powders",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "MALT",
+        "BADAM DRINK MIX",
+        "COCO POWDER",
+        "MATCHA"
+      ]
+    },
+    {
+      "category": "spices-seasonings",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "MASALA POWDER",
+        "GRAVY MIX"
+      ]
+    },
+    {
+      "category": "sauces-pickles",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "PICKLE",
+        "CHUTNEY",
+        "MAYONNAISE",
+        "SPRING ROLL SAUCE"
+      ]
+    },
+    {
+      "category": "plain-dairy",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "CONDENSED MILK"
+      ]
+    },
+    {
+      "category": "snacks-namkeen",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "POPCORN",
+        "PAPPAD",
+        "CHEESY POPS"
+      ]
+    },
+    {
+      "category": "chocolates-confectionery",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "TOOTY FRUITY",
+        "JELLY MIX"
+      ]
+    },
+    {
+      "category": "grains-flours",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "OATS"
+      ],
+      "namePattern": "^(?!.*(masala|chocolate|flavou?r)).*$"
+    },
+    {
+      "category": "breakfast-cereals",
+      "legacyCategory": "INSTANT FOOD",
+      "subcategories": [
+        "OATS"
+      ]
+    },
+    {
+      "category": "ready-to-eat",
+      "legacyCategory": "INSTANT FOOD"
+    }
+  ]
+}

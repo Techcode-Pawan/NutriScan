@@ -1,0 +1,200 @@
+{
+  "generatedAt": "2026-10-28T19:47:20.707Z",
+  "mappingVersion": "2026-10-29",
+  "sources": {
+    "legacyCsv": {
+      "file": "raw\\packaged_foods_india.csv",
+      "rows": 852,
+      "kept": 812
+    },
+    "openFoodFacts": {
+      "file": "raw\\off\\off_india_2026-10-29.jsonl",
+      "rows": 4067,
+      "kept": 3730,
+      "ingredientsEnriched": 534,
+      "meta": {
+        "source": "Open Food Facts search API",
+        "endpoint": "https://search.openfoodfacts.org/search",
+        "country": "india",
+        "filters": {
+          "states_tags": "en:nutrition-facts-completed"
+        },
+        "downloaded_at": "2026-10-28T18:41:55.101824+00:00",
+        "pages": 45,
+        "page_size": 100,
+        "records": 4067,
+        "count_reported_by_api": 4067,
+        "license": "ODbL 1.0 (database), DbCL 1.0 (contents), CC BY-SA (images)",
+        "attribution": "Data from Open Food Facts contributors - https://world.openfoodfacts.org"
+      }
+    }
+  },
+  "table3_3": {
+    "rawRecords": 4919,
+    "afterBarcodeValidationAndDedup": 4691,
+    "afterPlausibilityChecks": 4542,
+    "mappedToPrimaryCategory": 3799,
+    "allCoreNutrients_fullScore": 1540,
+    "fibreOrProteinMissing_partialScore": 558,
+    "noScore": 2444
+  },
+  "rejections": {
+    "invalidBarcode": 102,
+    "duplicates": 8,
+    "implausible": 149,
+    "noUsableName": 118,
+    "total": 377
+  },
+  "inrStatus": {
+    "RATED": 1540,
+    "NOT_ELIGIBLE": 847,
+    "INSUFFICIENT_DATA": 599,
+    "EXEMPT": 834,
+    "PARTIAL": 558,
+    "BASIS_UNKNOWN": 164
+  },
+  "byCategory": {
+    "beverages": {
+      "total": 336,
+      "rated": 276
+    },
+    "(unmapped)": {
+      "total": 743,
+      "rated": 0
+    },
+    "breakfast-cereals": {
+      "total": 119,
+      "rated": 91
+    },
+    "alcoholic-beverages": {
+      "total": 11,
+      "rated": 0
+    },
+    "chocolates-confectionery": {
+      "total": 372,
+      "rated": 270
+    },
+    "sauces-pickles": {
+      "total": 154,
+      "rated": 106
+    },
+    "supplements-infant": {
+      "total": 85,
+      "rated": 0
+    },
+    "snacks-namkeen": {
+      "total": 489,
+      "rated": 354
+    },
+    "biscuits-cookies": {
+      "total": 411,
+      "rated": 323
+    },
+    "spreads": {
+      "total": 96,
+      "rated": 70
+    },
+    "spices-seasonings": {
+      "total": 109,
+      "rated": 0
+    },
+    "waters": {
+      "total": 45,
+      "rated": 0
+    },
+    "grains-flours": {
+      "total": 154,
+      "rated": 0
+    },
+    "noodles-pasta": {
+      "total": 153,
+      "rated": 106
+    },
+    "dairy-products": {
+      "total": 110,
+      "rated": 68
+    },
+    "plain-dairy": {
+      "total": 138,
+      "rated": 0
+    },
+    "bars-nutrition": {
+      "total": 38,
+      "rated": 26
+    },
+    "health-drink-powders": {
+      "total": 44,
+      "rated": 29
+    },
+    "oils-ghee": {
+      "total": 119,
+      "rated": 0
+    },
+    "sugar-honey": {
+      "total": 57,
+      "rated": 0
+    },
+    "cakes-bakery": {
+      "total": 189,
+      "rated": 120
+    },
+    "tea-coffee": {
+      "total": 73,
+      "rated": 0
+    },
+    "dairy-beverages": {
+      "total": 86,
+      "rated": 65
+    },
+    "dried-fruits": {
+      "total": 61,
+      "rated": 23
+    },
+    "ready-to-eat": {
+      "total": 74,
+      "rated": 61
+    },
+    "plain-produce": {
+      "total": 116,
+      "rated": 0
+    },
+    "ice-cream-desserts": {
+      "total": 107,
+      "rated": 69
+    },
+    "indian-sweets": {
+      "total": 53,
+      "rated": 41
+    }
+  },
+  "qualityFlags": {
+    "category_unmapped": 743,
+    "energy_converted_from_kj": 13,
+    "suspected_per_serving_values": 99,
+    "category_inferred_from_name": 787,
+    "energy_macro_mismatch": 84,
+    "unverified_source": 812,
+    "fibre_zero_unverified": 572,
+    "basis_assumed": 741,
+    "basis_unknown": 65,
+    "less_than_value": 37,
+    "decimal_comma": 2,
+    "basis_inferred": 6,
+    "invalid_number": 1
+  },
+  "missingFieldCounts": {
+    "saturatedFatG": 961,
+    "transFatG": 3733,
+    "fiberG": 2141,
+    "fruitVegPct": 4311,
+    "nutsLegumesMilletsPct": 4390,
+    "extra": 4221,
+    "energyKcal": 488,
+    "fatG": 533,
+    "carbohydratesG": 500,
+    "sugarsG": 890,
+    "proteinG": 526,
+    "sodiumMg": 1325
+  },
+  "averageCompleteness": 0.799
+}

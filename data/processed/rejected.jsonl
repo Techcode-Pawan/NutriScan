@@ -1,0 +1,377 @@
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:26","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:70","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:107","reason":"implausible: saturated fat greater than total fat"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:111","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:114","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:117","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:136","reason":"implausible: saturated fat greater than total fat"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:151","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:221","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:274","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:284","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:401","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:406","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:421","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:512","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:526","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:564","reason":"implausible: saturated fat greater than total fat"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:575","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:588","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:623","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:624","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:638","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:666","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:705","reason":"implausible: energy above 900 kcal per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:721","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:745","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:748","reason":"implausible: fiberG above 100 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:786","reason":"implausible: saturated fat greater than total fat"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:793","reason":"implausible: fiberG above 100 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:813","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:817","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:832","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:15","reason":"duplicate of legacy-csv:9"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:60","reason":"duplicate of legacy-csv:23"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:279","reason":"duplicate of legacy-csv:261"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:303","reason":"duplicate of legacy-csv:265"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:311","reason":"duplicate of legacy-csv:287"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:470","reason":"duplicate of legacy-csv:469"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:647","reason":"duplicate of legacy-csv:631"}
+{"source":"LEGACY_CSV","sourceRef":"legacy-csv:833","reason":"duplicate of legacy-csv:825"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:3760287220122","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058901559","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0006","reason":"invalid barcode (unsupported length 4)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901207036989","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058904741","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:19017198","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:34","reason":"invalid barcode (unsupported length 2)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:7622201442019","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030897542","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:16121816","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00001101","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:08774440","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030921797","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030699085","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725118914","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058852165","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901499008275","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901192205261","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906002000494","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:06494437","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058903805","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902579002329","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:1101","reason":"invalid barcode (unsupported length 4)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063092433","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:4025839033827","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:08780839","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901246004833","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904083600701","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00012139","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0986614900106","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:4901219117120","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:19378426","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0901262040167","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901595971251","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908010213095","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906010501587","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058869446","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8602596567001","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904109410000","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906000610077","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906028790027","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063162600","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00000839","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908005144366","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906018140429","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8461379782768","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901131870079","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063142039","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904340730004","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908001631303","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:901262040167","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:02867633","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902710508666","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906035030055","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:53176113036","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058005738","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901719128288","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902979051934","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0839","reason":"invalid barcode (unsupported length 4)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906069402644","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908007487096","reason":"implausible: energy above 900 kcal per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:3948719100369","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:40101871","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904063255518","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063029316","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063028227","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:904063230072","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906014642064","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:012139","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:3265490008012","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906017290088","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:11724111","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:305000001769039","reason":"invalid barcode (unsupported length 15)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901012116623","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:3948725104641","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908019140019","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901453000024","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0827755070047","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902979050906","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0904063230072","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:90415470","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902080305025","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030891830","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89094022518","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:15267237","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901719124044","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906077630169","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902268011571","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:709358","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901233029856","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:07824221","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904063252463","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:06832717","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063092617","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:06231512","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:14018808","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901652140583","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:5909227010074","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901764082054","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0741754629276","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:1900679095518","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904377652288","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2201161","reason":"invalid barcode (unsupported length 7)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89094022495","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0006498585746","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:30000018200","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030976063","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906010503987","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906065032647","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904970588391","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000133527","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906009071602","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0700721646531","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904035416862","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906102430139","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906021128735","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0906036673596","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908012692157","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:6974107371629","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906001025146","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:26020","reason":"invalid barcode (unsupported length 5)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906080604546","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902246014310","reason":"implausible: energy above 900 kcal per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:5513313056206","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030717253","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904335600312","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906006720336","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904293590442","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000146048","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:048100001","reason":"invalid barcode (unsupported length 9)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000147560","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8903664054100","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89094021177","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906001387015","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904018605238","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:151010720","reason":"invalid barcode (unsupported length 9)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0336589311238","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904004400298","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908017962224","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0890539001995","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901747003892","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901719911712","reason":"implausible: energy above 900 kcal per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906036302199","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906127700668","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908013393329","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901764051128","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0111111111231","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000151726","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063028210","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904063201157","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908024724006","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904422702233","reason":"implausible: energy above 900 kcal per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058009729","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904335601890","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00026020","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901719122316","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906080602948","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89000601","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906117360216","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8903553601613","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901560043037","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:924344401248002602","reason":"invalid barcode (unsupported length 18)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906048500903","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:890107130110713","reason":"invalid barcode (unsupported length 15)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8902579002589","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908004740057","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906106360647","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906142023445","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:1653911138424","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:9607262124454","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89041056139","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000147562","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725114350","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:10048484","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:3018499009135","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000112330","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:305000002015062","reason":"invalid barcode (unsupported length 15)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:622201428501","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:52358","reason":"invalid barcode (unsupported length 5)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89036602211","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906028791147","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:250620","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906087777229","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:16222348","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000136641","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000133524","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000064216","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906009993065","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:74880030716","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000150588","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904103030716","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908008343407","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:9825348545010","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89876540000326","reason":"invalid barcode (unsupported length 14)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725005917","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904132917613","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725114404","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906021401067","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063343276","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2330013","reason":"invalid barcode (unsupported length 7)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904422703988","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0000203007768","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906033421916","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904335601005","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901262070973","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904022917785","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908017442146","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901393019766","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901233022321","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:4987176108630","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906069401739","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00062520","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906143891661","reason":"implausible: proteinG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:924011201059002655","reason":"invalid barcode (unsupported length 18)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8905950000686","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725004668","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:7622201150273","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904327600894","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:3031336700026","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063029309","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906005671820","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0622201428501","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908010609348","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0044012601695","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908009918284","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901242203902","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:924066700410002086","reason":"invalid barcode (unsupported length 18)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063012639","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0943029944019","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906009532172","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901652140897","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901748000661","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901719258619","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906008422276","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:100066","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904256002851","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901560090284","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058005783","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901037010920","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906009881430","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908007422127","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:7906023270013","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904391593333","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725003791","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89036311434","reason":"invalid barcode (unsupported length 11)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000146145","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000127656","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:48019704","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000131241","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058849127","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901571008315","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904103030785","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0710779570214","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8691707162171","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:303002","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:11131861","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:000604","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:000605","reason":"invalid barcode (unsupported length 6)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901548100561","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:51013831","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904065212397","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0009999996994","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906168750387","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:1901040902608","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901548431177","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030872693","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904156100411","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8905507001623","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:7622202026522","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0890000328125","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906076543231","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906090573085","reason":"implausible: saturatedFatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904327600887","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725014056","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904063240200","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901063364745","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89009949","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906009079844","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0870351009904","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906090573122","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906069406154","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:02200929","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901262261234","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:02201161","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725000226","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906020461185","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:7419871158155","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0793591862453","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725132804","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904970588504","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906048500361","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904004400939","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904970597004","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901262071611","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0769503153063","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901719122224","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906133402556","reason":"implausible: carbohydratesG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8907003513990","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906020453043","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:11002272","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00000605","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:00100066","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901725013738","reason":"implausible: fiberG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:6784005228563","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904422706064","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:80000000255746","reason":"invalid barcode (unsupported length 14)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:9999996994","reason":"invalid barcode (unsupported length 10)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908000476271","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0524003003030","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000133525","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901782000740","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8907065103870","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906002521494","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901030902932","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89023023275061","reason":"invalid barcode (unsupported length 14)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906017290965","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8903361339630","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000020154","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8903000364073","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:906036673596","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906026347193","reason":"implausible: fat + carbohydrate + protein above 105 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2200929","reason":"invalid barcode (unsupported length 7)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:2000000148087","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901014011117","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058004809","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906163832095","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8908020710003","reason":"implausible: saturated fat greater than total fat"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906019556052","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:89005774","reason":"implausible: energy above 900 kcal per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:0890400682216","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:7622201762063","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8903059560255","reason":"invalid barcode (check digit mismatch)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904132949706","reason":"implausible: sugars greater than carbohydrates"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8904256711593","reason":"implausible: sodium above 40 000 mg per 100 (salt > 100 g)"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8906002661404","reason":"implausible: fatG above 100 g per 100"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:8901058001181","reason":"no usable name"}
+{"source":"OPEN_FOOD_FACTS","sourceRef":"off:10822926","reason":"invalid barcode (check digit mismatch)"}

@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "NutriScan",
+    "slug": "nutriscan",
+    "scheme": "nutriscan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "edu.sgsits.nutriscan"
+    },
+    "android": {
+      "package": "edu.sgsits.nutriscan",
+      "adaptiveIcon": {
+        "backgroundColor": "#ECFDF5",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-image",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "NutriScan uses the camera to scan product barcodes and nutrition labels.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "NutriScan lets you pick a photo of a barcode or nutrition label to analyse.",
+          "cameraPermission": "NutriScan uses the camera to photograph nutrition labels."
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}

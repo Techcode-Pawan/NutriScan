@@ -1,0 +1,148 @@
+openapi: 3.1.0
+info:
+  title: NutriScan API
+  version: 1.0.0
+  description: >
+    Product lookup, FSSAI-draft INR scoring, healthier alternatives, comparison, user data,
+    OCR, experimental ML and a database-grounded assistant. See docs/API.md for full details.
+servers:
+  - url: http://localhost:4000/api
+components:
+  securitySchemes:
+    bearer: { type: http, scheme: bearer, bearerFormat: JWT }
+  parameters:
+    Key: { name: barcode, in: path, required: true, description: GS1 barcode or product id, schema: { type: string } }
+    Page: { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+    PageSize: { name: pageSize, in: query, schema: { type: integer, minimum: 1, maximum: 50, default: 20 } }
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties: { code: { type: string }, message: { type: string }, details: {} }
+    InrStatus: { type: string, enum: [RATED, PARTIAL, INSUFFICIENT_DATA, EXEMPT, NOT_ELIGIBLE, BASIS_UNKNOWN] }
+    ProductSummary:
+      type: object
+      properties:
+        id: { type: string }
+        barcode: { type: [string, 'null'] }
+        name: { type: string }
+        brand: { type: [string, 'null'] }
+        imageUrl: { type: [string, 'null'] }
+        category: { type: [object, 'null'], properties: { id: { type: integer }, slug: { type: string }, name: { type: string } } }
+        dataSource: { type: string, enum: [OPEN_FOOD_FACTS, LEGACY_CSV, USER_SUBMISSION] }
+        inr: { type: object, properties: { status: { $ref: '#/components/schemas/InrStatus' }, stars: { type: [number, 'null'] } } }
+        basis: { type: string, enum: [PER_100G, PER_100ML, UNKNOWN] }
+    Credentials:
+      type: object
+      required: [email, password]
+      properties: { email: { type: string, format: email }, password: { type: string, minLength: 8 }, displayName: { type: string } }
+    Preferences:
+      type: object
+      properties:
+        lowSugar: { type: boolean }
+        lowSodium: { type: boolean }
+        lowSaturatedFat: { type: boolean }
+        highFiber: { type: boolean }
+        highProtein: { type: boolean }
+        vegetarian: { type: boolean }
+        excludedIngredients: { type: array, items: { type: string } }
+        ageGroup: { type: [string, 'null'], enum: [CHILD, TEEN, ADULT, SENIOR, null] }
+  responses:
+    Error: { description: Error, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+paths:
+  /health: { get: { summary: Service health, responses: { '200': { description: OK }, '503': { $ref: '#/components/responses/Error' } } } }
+  /scoring/methodology: { get: { summary: INR tables and assumptions, responses: { '200': { description: OK } } } }
+  /products/search:
+    get:
+      summary: Search products
+      parameters:
+        - { name: q, in: query, schema: { type: string } }
+        - { name: category, in: query, schema: { type: integer } }
+        - { name: subcategory, in: query, schema: { type: string } }
+        - { name: brand, in: query, schema: { type: string } }
+        - { name: ratedOnly, in: query, schema: { type: boolean } }
+        - { name: sort, in: query, schema: { type: string, enum: [relevance, name, rating, energy, sugar, sodium, saturatedFat, protein, fiber] } }
+        - { name: order, in: query, schema: { type: string, enum: [asc, desc] } }
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200': { description: Page of products, content: { application/json: { schema: { type: object, properties: { data: { type: array, items: { $ref: '#/components/schemas/ProductSummary' } }, meta: { type: object } } } } } }
+        '400': { $ref: '#/components/responses/Error' }
+  /products/{barcode}:
+    get:
+      summary: Product detail with INR rating and explanation
+      security: [{}, { bearer: [] }]
+      parameters: [{ $ref: '#/components/parameters/Key' }]
+      responses: { '200': { description: OK }, '400': { $ref: '#/components/responses/Error' }, '404': { $ref: '#/components/responses/Error' } }
+  /products/{barcode}/explanation:
+    get: { summary: INR breakdown only, parameters: [{ $ref: '#/components/parameters/Key' }], responses: { '200': { description: OK } } }
+  /products/{barcode}/alternatives:
+    get:
+      summary: Higher-rated same-category alternatives
+      security: [{}, { bearer: [] }]
+      parameters:
+        - $ref: '#/components/parameters/Key'
+        - { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 20, default: 5 } }
+        - { name: includePartial, in: query, schema: { type: boolean, default: false } }
+        - { name: applyPreferences, in: query, schema: { type: boolean, default: true } }
+      responses: { '200': { description: OK }, '404': { $ref: '#/components/responses/Error' } }
+  /products/{barcode}/ml:
+    get: { summary: Experimental ML estimate, parameters: [{ $ref: '#/components/parameters/Key' }], responses: { '200': { description: 'status ok | unavailable | insufficient_data' } } }
+  /categories: { get: { summary: List categories, responses: { '200': { description: OK } } } }
+  /categories/{id}/products:
+    get:
+      summary: Products in a category (id or slug)
+      parameters: [{ name: id, in: path, required: true, schema: { type: string } }, { $ref: '#/components/parameters/Page' }, { $ref: '#/components/parameters/PageSize' }]
+      responses: { '200': { description: OK } }
+  /compare:
+    post:
+      summary: Compare 2-4 products
+      requestBody: { required: true, content: { application/json: { schema: { type: object, properties: { products: { type: array, minItems: 2, maxItems: 4, items: { type: string } } } } } } }
+      responses: { '200': { description: OK }, '400': { $ref: '#/components/responses/Error' } }
+  /auth/register:
+    post: { summary: Register, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/Credentials' } } } }, responses: { '201': { description: Token and user }, '409': { $ref: '#/components/responses/Error' } } }
+  /auth/login:
+    post: { summary: Login, requestBody: { required: true, content: { application/json: { schema: { $ref: '#/components/schemas/Credentials' } } } }, responses: { '200': { description: Token and user }, '401': { $ref: '#/components/responses/Error' } } }
+  /auth/logout: { post: { summary: Logout, security: [{ bearer: [] }], responses: { '204': { description: Done } } } }
+  /auth/logout-all: { post: { summary: Invalidate all tokens, security: [{ bearer: [] }], responses: { '204': { description: Done } } } }
+  /me:
+    get: { summary: Profile, security: [{ bearer: [] }], responses: { '200': { description: OK } } }
+    patch: { summary: Update display name, security: [{ bearer: [] }], responses: { '200': { description: OK } } }
+    delete: { summary: Delete account and personal data, security: [{ bearer: [] }], responses: { '204': { description: Deleted } } }
+  /me/password: { post: { summary: Change password, security: [{ bearer: [] }], responses: { '200': { description: New token } } } }
+  /history:
+    get: { summary: Scan history, security: [{ bearer: [] }], parameters: [{ $ref: '#/components/parameters/Page' }, { $ref: '#/components/parameters/PageSize' }], responses: { '200': { description: OK } } }
+    post: { summary: Record a scan, security: [{ bearer: [] }], responses: { '201': { description: Created } } }
+    delete: { summary: Clear history, security: [{ bearer: [] }], responses: { '200': { description: Deleted count } } }
+  /history/{id}: { delete: { summary: Delete one entry, security: [{ bearer: [] }], parameters: [{ name: id, in: path, required: true, schema: { type: string } }], responses: { '204': { description: Deleted }, '404': { $ref: '#/components/responses/Error' } } } }
+  /favorites:
+    get: { summary: Favourites, security: [{ bearer: [] }], responses: { '200': { description: OK } } }
+    post: { summary: Add favourite, security: [{ bearer: [] }], responses: { '201': { description: Added } } }
+  /favorites/{barcode}: { delete: { summary: Remove favourite, security: [{ bearer: [] }], parameters: [{ $ref: '#/components/parameters/Key' }], responses: { '204': { description: Removed } } } }
+  /preferences:
+    get: { summary: Get preferences, security: [{ bearer: [] }], responses: { '200': { description: OK } } }
+    put: { summary: Update preferences, security: [{ bearer: [] }], requestBody: { content: { application/json: { schema: { $ref: '#/components/schemas/Preferences' } } } }, responses: { '200': { description: OK } } }
+  /submissions:
+    post:
+      summary: Submit a missing product for review
+      requestBody: { content: { multipart/form-data: { schema: { type: object, required: [name], properties: { name: { type: string }, barcode: { type: string }, brand: { type: string }, categorySlug: { type: string }, ingredientsText: { type: string }, nutrition: { type: string, description: JSON }, image: { type: string, format: binary } } } }, application/json: { schema: { type: object } } } }
+      responses: { '201': { description: Pending submission }, '400': { $ref: '#/components/responses/Error' }, '422': { $ref: '#/components/responses/Error' } }
+  /submissions/mine: { get: { summary: Own submissions, security: [{ bearer: [] }], responses: { '200': { description: OK } } } }
+  /ocr/label:
+    post:
+      summary: Extract nutrition values from a label photo (unverified)
+      requestBody: { required: true, content: { multipart/form-data: { schema: { type: object, properties: { image: { type: string, format: binary } } } } } }
+      responses: { '200': { description: Extraction for review }, '400': { $ref: '#/components/responses/Error' }, '503': { $ref: '#/components/responses/Error' } }
+  /ocr/analyze: { post: { summary: Score user-reviewed values (not stored), responses: { '200': { description: OK }, '422': { $ref: '#/components/responses/Error' } } } }
+  /ml/status: { get: { summary: ML model status, responses: { '200': { description: OK } } } }
+  /ml/predict: { post: { summary: Ad-hoc ML estimate, responses: { '200': { description: OK } } } }
+  /assistant/status: { get: { summary: Assistant mode, responses: { '200': { description: OK } } } }
+  /assistant/suggestions: { get: { summary: Suggested questions, parameters: [{ name: product, in: query, required: true, schema: { type: string } }], responses: { '200': { description: OK } } } }
+  /assistant/ask:
+    post:
+      summary: Ask a database-grounded question about a product
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [product, question], properties: { product: { type: string }, question: { type: string, maxLength: 500 }, compareWith: { type: string } } } } } }
+      responses: { '200': { description: Answer with facts and provider }, '404': { $ref: '#/components/responses/Error' } }

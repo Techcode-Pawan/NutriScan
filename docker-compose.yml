@@ -1,0 +1,32 @@
+# Optional: PostgreSQL (and the ML inference service) via Docker instead of a local install.
+#   docker compose up -d db          -> PostgreSQL on localhost:5433 (same URL as scripts/dev-db.*)
+#   docker compose up -d ml          -> ML inference on localhost:8001 (after training the model)
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: nutriscan
+      POSTGRES_PASSWORD: nutriscan
+      POSTGRES_DB: nutriscan
+    ports:
+      - "5433:5432"
+    volumes:
+      - nutriscan-pg:/var/lib/postgresql/data
+      - ./scripts/docker-init-test-db.sql:/docker-entrypoint-initdb.d/10-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nutriscan"]
+      interval: 5s
+      retries: 10
+
+  ml:
+    image: python:3.11-slim
+    working_dir: /ml
+    volumes:
+      - ./ml:/ml
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && uvicorn inference.server:app --host 0.0.0.0 --port 8001"
+    ports:
+      - "8001:8001"
+    profiles: ["ml"]
+
+volumes:
+  nutriscan-pg:
